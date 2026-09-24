@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Castelo Consig — Crédito com clareza</title>
+<meta name="description" content="Castelo Consig: antecipação de FGTS, crédito consignado e consignado CLT com atendimento ágil e transparente. Fale conosco pelo WhatsApp.">
+<meta name="theme-color" content="#05080d">
+
+<!-- Política de segurança de conteúdo básica (ajuste conforme o domínio final de hospedagem) -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self';">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<link rel="icon" type="image/svg+xml" href="imagens/favicon.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Camada ambiente: ondas e faíscas contínuas atrás de todo o conteúdo -->
+<div class="ambient" aria-hidden="true">
+  <svg class="ambient-wave" viewBox="0 0 1440 900" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;opacity:.12">
+    <path d="M0 550 C 240 480, 480 620, 720 550 C 960 480, 1200 620, 1440 550 L1440 900 L0 900 Z" fill="#d4af5a"/>
+  </svg>
+</div>
+<canvas id="sparks-canvas" aria-hidden="true"></canvas>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#home" aria-label="Castelo Consig — início">
+      <img src="imagens/logo.jpeg" alt="Castelo Consig" width="180" height="42">
+    </a>
+    <nav class="nav">
+      <ul class="nav__links" id="primary-navigation">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#sobre">Sobre nós</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#parceiros">Parceiros</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a href="#" class="btn btn--primary js-whatsapp-link" data-wa-message="Olá! Quero falar com a Castelo Consig.">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.7.9-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.3-1.6c-.1-.2 0-.4.1-.5l.4-.4a1.8 1.8 0 0 0 .2-.4.4.4 0 0 0 0-.4c-.1-.1-.5-1.3-.7-1.8s-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.9 2 4.7 4.7 0 0 0 1 2.5 10.6 10.6 0 0 0 4.1 3.6c.6.2 1 .4 1.4.5a3.3 3.3 0 0 0 1.5.1 2.5 2.5 0 0 0 1.6-1.1 1.9 1.9 0 0 0 .1-1.1c-.1-.1-.2-.2-.4-.3Z"/></svg>
+        Fale Conosco
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__copy reveal is-visible">
+        <span class="eyebrow">Conte com a Castelo Consig</span>
+        <h1 class="hero__title">Qual o tamanho do seu <span class="accent">sonho?</span></h1>
+        <p class="lede">Trabalhamos para ajudar pessoas como você a ter mais liberdade financeira, com crédito consignado, antecipação de FGTS e um atendimento que respeita o seu tempo.</p>
+        <div class="hero__actions">
+          <a href="#" class="btn btn--primary js-whatsapp-link" data-wa-message="Olá! Quero simular meu crédito com a Castelo Consig.">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.7.9-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.3-1.6c-.1-.2 0-.4.1-.5l.4-.4a1.8 1.8 0 0 0 .2-.4.4.4 0 0 0 0-.4c-.1-.1-.5-1.3-.7-1.8s-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.9 2 4.7 4.7 0 0 0 1 2.5 10.6 10.6 0 0 0 4.1 3.6c.6.2 1 .4 1.4.5a3.3 3.3 0 0 0 1.5.1 2.5 2.5 0 0 0 1.6-1.1 1.9 1.9 0 0 0 .1-1.1c-.1-.1-.2-.2-.4-.3Z"/></svg>
+            Falar no WhatsApp
+          </a>
+          <a href="#sobre" class="btn btn--ghost">Saiba mais</a>
+        </div>
+        <div class="hero__trust">
+          <div class="avatar-stack" aria-hidden="true">
+            <img src="imagens/avatar-1.png" alt="" width="38" height="38">
+            <img src="imagens/avatar-2.png" alt="" width="38" height="38">
+            <img src="imagens/avatar-3.jpeg" alt="" width="38" height="38">
+          </div>
+          <span>+ de 60 mil clientes atendidos por mês</span>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <img src="imagens/hero-banner.jpeg" alt="Cliente Castelo Consig satisfeito com o atendimento" width="1200" height="1300" loading="eager">
+        <div class="hero__badge">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4af5a" stroke-width="2" aria-hidden="true"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+          <div>
+            <strong>Nota 4.9</strong>
+            <span class="fog">avaliação média dos clientes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wave-divider" aria-hidden="true">
+      <svg class="wave-back" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0 60 C 240 20, 480 100, 720 60 C 960 20, 1200 100, 1440 60 C 1680 20, 1920 100, 2160 60 L2160 120 L0 120 Z" fill="#b38b3f"/>
+      </svg>
+      <svg class="wave-front" viewBox="0 0 1440 100" preserveAspectRatio="none" style="margin-top:-40px">
+        <path d="M0 50 C 200 90, 400 10, 600 50 C 800 90, 1000 10, 1200 50 C 1300 70, 1400 30, 1440 50 L1440 100 L0 100 Z" fill="#07152d"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section class="section section--surface" style="padding-block: var(--space-4);">
+    <div class="container stats">
+      <div class="stat reveal">
+        <span class="stat__num" data-count="500" data-suffix="+">0</span>
+        <span class="stat__label">Clientes atendidos ao mês</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat__num" data-count="100" data-suffix="+">0</span>
+        <span class="stat__label">Colaboradores na equipe</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat__num" data-count="4.9" data-decimals="1">0</span>
+        <span class="stat__label">Nota média de avaliação</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat__num" data-count="2017">0</span>
+        <span class="stat__label">Atuando no mercado desde</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOBRE ============ -->
+  <section class="section section--dark" id="sobre">
+    <div class="container about__grid">
+      <div class="about__visual reveal">
+        <img src="imagens/sobre-banner.jpeg" alt="Equipe Castelo Consig trabalhando" width="1000" height="1200" loading="lazy">
+      </div>
+      <div class="about__copy reveal">
+        <span class="eyebrow">Nossa história</span>
+        <h2>Atuação sólida desde 2017</h2>
+        <p class="lede">Essa é a garantia de que todo o processo terá credibilidade, segurança, qualidade e um atendimento exclusivo, pensado para o seu momento de vida.</p>
+        <div class="about__pills">
+          <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Eficiência</span>
+          <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6z"/></svg> Qualidade</span>
+          <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg> Agilidade</span>
+        </div>
+
+        <div class="diff-grid reveal-stagger">
+          <div class="diff-card" style="--i:0">
+            <div class="diff-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+            <h3>Nossa missão</h3>
+            <p>Gerar valor e satisfação a clientes, colaboradores e parceiros, com excelência sustentável.</p>
+          </div>
+          <div class="diff-card" style="--i:1">
+            <div class="diff-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <h3>Nossa visão</h3>
+            <p>Ser referência em agilidade, qualidade e eficiência na intermediação de crédito.</p>
+          </div>
+          <div class="diff-card" style="--i:2">
+            <div class="diff-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 5a5.5 5.5 0 0 1 9.5 7c-2.5 4.5-9.5 9-9.5 9Z"/></svg></div>
+            <h3>Empresa de valores</h3>
+            <p>Ética, respeito, proatividade, honestidade e eficiência em cada atendimento.</p>
+          </div>
+          <div class="diff-card" style="--i:3">
+            <div class="diff-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg></div>
+            <h3>Atendimento próximo</h3>
+            <p>Consultores financeiros especializados prontos para te ouvir de verdade.</p>
+          </div>
+          <div class="diff-card" style="--i:4">
+            <div class="diff-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+            <h3>Melhores condições</h3>
+            <p>Taxas competitivas e prazos flexíveis que cabem no seu orçamento.</p>
+          </div>
+          <div class="diff-card" style="--i:5">
+            <div class="diff-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></div>
+            <h3>Crédito descomplicado</h3>
+            <p>100% on-line, com uma equipe ágil, transparente e qualificada.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOLUÇÕES ============ -->
+  <section class="section section--paper">
+    <div class="container solucoes__grid">
+      <div>
+        <span class="eyebrow">Soluções Castelo Consig</span>
+        <h2>Temos soluções financeiras para você</h2>
+        <ul class="check-list">
+          <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Tirar um plano do papel</li>
+          <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Organizar as contas</li>
+          <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Investir no futuro da sua família</li>
+          <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Melhorar sua casa e a sua vida</li>
+          <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Cuidar de quem você ama</li>
+        </ul>
+      </div>
+      <div class="solucoes__visual reveal">
+        <img src="imagens/solucoes-image.WEBP" alt="Soluções financeiras Castelo Consig" width="900" height="900" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVIÇOS ============ -->
+  <section class="section section--dark" id="servicos">
+    <div class="container">
+      <span class="eyebrow">Nossos serviços</span>
+      <h2>Feitos para o seu momento</h2>
+
+      <div class="servicos-grid">
+        <article class="servico-card reveal">
+          <div class="servico-card__media"><img src="imagens/servico-1.jpeg" alt="Antecipação do FGTS" width="700" height="500" loading="lazy"></div>
+          <div class="servico-card__body">
+            <h3>Antecipação do FGTS</h3>
+            <p>Antecipe seu FGTS com condições especiais e mais liberdade financeira.</p>
+            <a href="#" class="servico-card__link js-whatsapp-link" data-wa-message="Quero saber mais sobre a antecipação de FGTS.">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+          </div>
+        </article>
+
+        <article class="servico-card reveal">
+          <div class="servico-card__media"><img src="imagens/servico-2.jpg" alt="Crédito consignado" width="700" height="500" loading="lazy"></div>
+          <div class="servico-card__body">
+            <h3>Crédito consignado</h3>
+            <p>Ajudamos você a ter mais folga financeira com condições facilitadas.</p>
+            <a href="#" class="servico-card__link js-whatsapp-link" data-wa-message="Quero saber mais sobre crédito consignado.">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+          </div>
+        </article>
+
+        <article class="servico-card reveal">
+          <div class="servico-card__media"><img src="imagens/servico-3.jpg" alt="Consignado para CLT" width="700" height="500" loading="lazy"></div>
+          <div class="servico-card__body">
+            <h3>Consignado para CLT</h3>
+            <p>Empréstimo exclusivo para trabalhadores CLT, com taxas mais baixas.</p>
+            <a href="#" class="servico-card__link js-whatsapp-link" data-wa-message="Quero saber mais sobre o consignado para CLT.">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+          </div>
+        </article>
+      </div>
+
+      <div style="text-align:center; margin-top: var(--space-4);">
+        <a href="#" class="btn btn--primary js-whatsapp-link" data-wa-message="Olá! Quero contratar um serviço da Castelo Consig.">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.7.9-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.3-1.6c-.1-.2 0-.4.1-.5l.4-.4a1.8 1.8 0 0 0 .2-.4.4.4 0 0 0 0-.4c-.1-.1-.5-1.3-.7-1.8s-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.9 2 4.7 4.7 0 0 0 1 2.5 10.6 10.6 0 0 0 4.1 3.6c.6.2 1 .4 1.4.5a3.3 3.3 0 0 0 1.5.1 2.5 2.5 0 0 0 1.6-1.1 1.9 1.9 0 0 0 .1-1.1c-.1-.1-.2-.2-.4-.3Z"/></svg>
+          Contratar serviços
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DEPOIMENTOS ============ -->
+  <section class="section section--surface" id="depoimentos">
+    <div class="container">
+      <span class="eyebrow">Comentários Castelo Consig</span>
+      <h2>Depoimentos de clientes</h2>
+
+      <div class="testimonials reveal" style="margin-top: var(--space-4);">
+        <div class="testimonials__track" id="testimonialsTrack">
+          <article class="testimonial-card">
+            <div class="testimonial-card__head">
+              <img src="imagens/avatar-1.png" alt="" width="48" height="48">
+              <div>
+                <h3 style="font-size:1rem">Sebastião Marques</h3>
+                <div class="testimonial-card__stars" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+                </div>
+              </div>
+            </div>
+            <p>"Sempre fui muito bem atendido. Os atendentes são educados e atenciosos. Recomendo bastante."</p>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-card__head">
+              <img src="imagens/avatar-2.png" alt="" width="48" height="48">
+              <div>
+                <h3 style="font-size:1rem">José Amauri</h3>
+                <div class="testimonial-card__stars" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+                </div>
+              </div>
+            </div>
+            <p>"Extremamente rápidos com as solicitações — não levei nem uma hora para resolver tudo. Equipe de parabéns!"</p>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-card__head">
+              <img src="imagens/avatar-3.jpeg" alt="" width="48" height="48">
+              <div>
+                <h3 style="font-size:1rem">Ném Rodrigues</h3>
+                <div class="testimonial-card__stars" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+                </div>
+              </div>
+            </div>
+            <p>"Atendimento humanizado e muito satisfatório. Excelente equipe, excelentes profissionais."</p>
+          </article>
+        </div>
+
+        <div class="testimonials__nav">
+          <button type="button" id="testimonialPrev" aria-label="Depoimento anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button type="button" id="testimonialNext" aria-label="Próximo depoimento">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PARCEIROS ============ -->
+  <section class="section section--dark" id="parceiros">
+    <div class="container">
+      <span class="eyebrow">Segurança e credibilidade</span>
+      <h2>Nossos parceiros</h2>
+      <div class="marquee reveal" style="margin-top: var(--space-4);">
+        <div class="marquee__track" aria-hidden="true">
+          <img src="imagens/parceiro-1.jpeg" alt="" width="150" height="60"> 
+          <img src="imagens/parceiro-2.jpeg" alt="" width="150" height="60">
+          <img src="imagens/parceiro-3.jpeg" alt="" width="150" height="60">
+          <img src="imagens/parceiro-4.jpeg" alt="" width="150" height="60">
+          <img src="imagens/parceiro-5.jpeg" alt="" width="150" height="60">
+          <img src="imagens/parceiro-6.jpeg" alt="" width="150" height="60">
+          <img src="imagens/parceiro-7.jpeg" alt="" width="150" height="60">
+          <img src="imagens/parceiro-8.jpeg" alt="" width="150" height="60">
+          <img src="imagens/parceiro-9.jpeg" alt="" width="150" height="60">
+          <img src="imagens/parceiro-10.jpeg" alt="" width="150" height="60">
+          <img src="imagens/parceiro-11.jpeg" alt="" width="150" height="60">
+          <img src="imagens/parceiro-12.jpeg" alt="" width="150" height="60">
+          <img src="imagens/parceiro-13.jpeg" alt="" width="150" height="60">
+          <img src="imagens/parceiro-14.jpeg" alt="" width="150" height="60">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ CTA ============ -->
+  <section class="section section--surface" id="faq">
+    <div class="container faq-cta reveal">
+      <div class="faq-cta__orb" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 1 1 4 2.8c-.8.3-1.1 1-1.1 1.7"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <h2>Tem dúvidas?</h2>
+      <p class="lede" style="margin-inline:auto;">Fale direto com a nossa equipe pelo WhatsApp e receba uma resposta rápida e sem enrolação.</p>
+      <div style="margin-top: var(--space-3);">
+        <a href="#" class="btn btn--primary js-whatsapp-link" data-wa-message="Olá! Tenho uma dúvida.">Perguntar no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wave-divider" aria-hidden="true" style="position:relative; transform: rotate(180deg); margin-bottom: var(--space-3);">
+    <svg class="wave-back" viewBox="0 0 1440 80" preserveAspectRatio="none">
+      <path d="M0 40 C 240 10, 480 70, 720 40 C 960 10, 1200 70, 1440 40 L1440 80 L0 80 Z" fill="#d4af5a" opacity="0.15"/>
+    </svg>
+  </div>
+
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <img src="imagens/logo.jpeg" alt="Castelo Consig" width="160" height="38">
+      <p>Desde 2017 atuando no mercado de crédito — credibilidade, segurança e atendimento próximo em cada etapa.</p>
+      <div class="footer__social">
+        <a href="#" class="js-whatsapp-link" data-wa-message="Olá!" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg>
+        </a>
+        <a href="#" class="js-instagram-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </a>
+        <a href="#" class="js-email-link" aria-label="E-mail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 7 9 6 9-6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h4>Institucional</h4>
+      <ul class="footer__links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#sobre">Sobre nós</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Soluções</h4>
+      <ul class="footer__links">
+        <li><a href="#servicos">Crédito consignado</a></li>
+        <li><a href="#servicos">Antecipação de FGTS</a></li>
+        <li><a href="#faq">Perguntas frequentes</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Fique por dentro</h4>
+      <p class="fog" style="font-size: var(--fs-xs); margin-bottom: var(--space-2);">Novidades e condições especiais no seu e-mail.</p>
+      <form class="footer__newsletter" id="newsletterForm" novalidate>
+        <label for="newsletterEmail" class="sr-only" style="position:absolute;left:-9999px;">Seu e-mail</label>
+        <input type="email" id="newsletterEmail" name="email" placeholder="seu@email.com" autocomplete="email" required maxlength="120">
+        <!-- Campo honeypot anti-spam: deve permanecer sempre vazio e invisível -->
+        <input type="text" name="website" id="newsletterHoneypot" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;">
+        <button type="submit">Enviar</button>
+      </form>
+      <p class="footer__newsletter-msg" id="newsletterMsg" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <span>© <span id="year"></span> Castelo Consig. Todos os direitos reservados.</span>
+    <div style="display:flex; gap: 1.2rem;">
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Termos de Uso</a>
+    </div>
+  </div>
+
+  <div class="container footer__disclaimer">
+    A Castelo Consig não é uma instituição financeira e não realiza operações de crédito diretamente. Atua como correspondente bancário para facilitar a contratação de produtos financeiros junto a instituições parceiras, seguindo as diretrizes do Banco Central do Brasil. Toda avaliação de crédito segue a política da instituição financeira escolhida.
+  </div>
+</footer>
+
+<!-- ============ FAB — WhatsApp / Instagram / E-mail ============ -->
+<button type="button" class="to-top" id="toTopBtn" aria-label="Voltar ao topo">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<div class="fab" id="fabMenu">
+  <div class="fab__options">
+    <a href="#" class="fab__option js-email-link">
+      <span class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 7 9 6 9-6"/></svg></span>
+      E-mail
+    </a>
+    <a href="#" class="fab__option js-instagram-link" target="_blank" rel="noopener noreferrer">
+      <span class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></span>
+      Instagram
+    </a>
+    <a href="#" class="fab__option js-whatsapp-link" data-wa-message="Olá! Vim pelo site e quero falar com vocês.">
+      <span class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg></span>
+      WhatsApp
+    </a>
+  </div>
+  <button type="button" class="fab__main" id="fabToggle" aria-label="Abrir opções de contato" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.7.9-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.3-1.6c-.1-.2 0-.4.1-.5l.4-.4a1.8 1.8 0 0 0 .2-.4.4.4 0 0 0 0-.4c-.1-.1-.5-1.3-.7-1.8s-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.9 2 4.7 4.7 0 0 0 1 2.5 10.6 10.6 0 0 0 4.1 3.6c.6.2 1 .4 1.4.5a3.3 3.3 0 0 0 1.5.1 2.5 2.5 0 0 0 1.6-1.1 1.9 1.9 0 0 0 .1-1.1c-.1-.1-.2-.2-.4-.3Z"/></svg>
+  </button>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
