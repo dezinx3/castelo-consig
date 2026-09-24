@@ -78,17 +78,20 @@
     const digits = onlyDigits(CONFIG.whatsappNumber);
 
     const safeMessage = encodeURIComponent(
-      sanitizeText(message || "Olá! Gostaria de saber mais sobre os serviços da Castelo Consig.")
+      sanitizeText(
+        message ||
+          "Olá! Gostaria de saber mais sobre os serviços da Castelo Consig."
+      )
     );
 
-    return `https://wa.me/${digits}?text=${safeMessage}`;
+    return `whatsapp://send?phone=${digits}&text=${safeMessage}`;
   }
 
   function buildInstagramUrl() {
     const user = String(CONFIG.instagramUser || "")
       .replace(/[^a-zA-Z0-9._]/g, "");
 
-    return `https://instagram.com/${user}`;
+    return `instagram://user?username=${user}`;
   }
 
   function buildEmailUrl() {
@@ -103,7 +106,7 @@
         buildWhatsappUrl(link.dataset.waMessage)
       );
 
-      link.setAttribute("target", "_blank");
+      link.removeAttribute("target");
       link.setAttribute("rel", "noopener noreferrer");
     });
 
@@ -111,13 +114,14 @@
     document.querySelectorAll(".js-instagram-link").forEach((link) => {
       link.setAttribute("href", buildInstagramUrl());
 
-      link.setAttribute("target", "_blank");
+      link.removeAttribute("target");
       link.setAttribute("rel", "noopener noreferrer");
     });
 
 
     document.querySelectorAll(".js-email-link").forEach((link) => {
       link.setAttribute("href", buildEmailUrl());
+      link.removeAttribute("target");
     });
 
   }
